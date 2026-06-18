@@ -216,6 +216,8 @@ a { color: inherit; text-decoration: none; }
 
 .hero-title-444 {
   display: inline-block;
+  font-size: 1.25em;
+  line-height: 0.9;
   color: transparent;
   -webkit-text-stroke: 3px var(--white);
   text-stroke: 3px var(--white);
