@@ -6,7 +6,7 @@
   --dark: #111111;
   --white: #ffffff;
   --border: rgba(255, 255, 255, 0.2);
-  --font-display: "Luckiest Guy", cursive;
+  --font-display: "Big Shoulders Display", cursive;
   --font-body: "Space Grotesk", sans-serif;
 }
 
@@ -24,6 +24,8 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
@@ -108,6 +110,8 @@ a { color: inherit; text-decoration: none; }
 
 .nav-logo-444 {
   font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
   font-size: 1.8rem;
   letter-spacing: 0.02em;
 }
@@ -279,6 +283,8 @@ a { color: inherit; text-decoration: none; }
 .about-emphasis {
   margin-top: 24px;
   font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
   letter-spacing: 0.05em;
   font-size: 1.3rem;
 }
@@ -356,6 +362,8 @@ a { color: inherit; text-decoration: none; }
 
 .club-time {
   font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
   font-size: 3.5rem;
   line-height: 1;
 }
@@ -446,6 +454,8 @@ a { color: inherit; text-decoration: none; }
 
 .product-label {
   font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
   font-size: 1.6rem;
   letter-spacing: 0.05em;
 }
@@ -486,6 +496,8 @@ a { color: inherit; text-decoration: none; }
 
 .countdown-number {
   font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
   font-size: 3rem;
   line-height: 1;
 }
