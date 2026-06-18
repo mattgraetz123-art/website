@@ -37,8 +37,35 @@
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content fade-in">
-    <h1 class="hero-title"><span class="hero-title-444">444</span><br><span>&ndash; RUNNER &ndash;</span></h1>
-    <p class="hero-tagline">ALWAYS MOVING</p>
+    <p class="eyebrow">The Wait Is Almost Over</p>
+    <h2>DROPPING SOON</h2>
+
+    <div class="countdown-grid" id="countdownTimer">
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-days">00</span>
+        <span class="countdown-label">DAYS</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-hours">00</span>
+        <span class="countdown-label">HOURS</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-minutes">00</span>
+        <span class="countdown-label">MINUTES</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-seconds">00</span>
+        <span class="countdown-label">SECONDS</span>
+      </div>
+    </div>
+
+    <p class="countdown-subtext">The kit drops end of July. Sign up to be first.</p>
+
+    <form class="signup-form" id="signupForm">
+      <input type="email" id="signupEmail" placeholder="YOUR EMAIL" required aria-label="Email address">
+      <button type="submit" class="btn">NOTIFY ME</button>
+    </form>
+    <p class="signup-success" id="signupSuccess" aria-live="polite"></p>
   </div>
   <a href="#about" class="scroll-arrow" aria-label="Scroll down">
     <span></span>
@@ -148,40 +175,6 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="countdown" id="countdown">
-  <div class="section-inner">
-    <p class="eyebrow fade-in">The Wait Is Almost Over</p>
-    <h2 class="fade-in">DROPPING SOON</h2>
-
-    <div class="countdown-grid fade-in" id="countdownTimer">
-      <div class="countdown-unit">
-        <span class="countdown-number" id="cd-days">00</span>
-        <span class="countdown-label">DAYS</span>
-      </div>
-      <div class="countdown-unit">
-        <span class="countdown-number" id="cd-hours">00</span>
-        <span class="countdown-label">HOURS</span>
-      </div>
-      <div class="countdown-unit">
-        <span class="countdown-number" id="cd-minutes">00</span>
-        <span class="countdown-label">MINUTES</span>
-      </div>
-      <div class="countdown-unit">
-        <span class="countdown-number" id="cd-seconds">00</span>
-        <span class="countdown-label">SECONDS</span>
-      </div>
-    </div>
-
-    <p class="countdown-subtext fade-in">The kit drops end of July. Sign up to be first.</p>
-
-    <form class="signup-form fade-in" id="signupForm">
-      <input type="email" id="signupEmail" placeholder="YOUR EMAIL" required aria-label="Email address">
-      <button type="submit" class="btn">NOTIFY ME</button>
-    </form>
-    <p class="signup-success" id="signupSuccess" aria-live="polite"></p>
   </div>
 </section>
 
