@@ -214,6 +214,13 @@ a { color: inherit; text-decoration: none; }
   line-height: 0.95;
 }
 
+.hero-title-444 {
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--white);
+  text-stroke: 3px var(--white);
+}
+
 .hero-title span {
   display: block;
   font-size: 0.35em;
