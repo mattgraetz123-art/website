@@ -484,11 +484,31 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== Countdown ===== */
 .countdown {
+  position: relative;
   background: var(--black);
   padding: 140px 0;
   text-align: center;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.countdown-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  max-width: 140%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 0 60px rgba(140, 255, 130, 0.35));
+}
+
+.countdown .section-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .countdown h2 { font-size: clamp(2.5rem, 6vw, 4rem); }
