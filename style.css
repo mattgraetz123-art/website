@@ -22,22 +22,6 @@ body {
   overflow-x: hidden;
 }
 
-.page-bg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 900px;
-  max-width: 90vw;
-  transform: translate(-50%, -50%);
-  opacity: 0.22;
-  z-index: 500;
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-
-.page-bg img {
-  width: 100%;
-}
 
 h1, h2, h3 {
   font-family: var(--font-display);
@@ -460,7 +444,7 @@ a { color: inherit; text-decoration: none; }
   aspect-ratio: 3 / 4;
   background-size: cover;
   background-position: center;
-  background-color: var(--black);
+  filter: grayscale(1);
   border: 1px solid var(--border);
   overflow: hidden;
   transition: transform 0.3s ease;
