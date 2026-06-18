@@ -105,8 +105,12 @@ a { color: inherit; text-decoration: none; }
 
 .nav-logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 44px;
+  width: auto;
 }
 
 .nav-logo-444 {
