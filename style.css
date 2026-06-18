@@ -219,8 +219,7 @@ a { color: inherit; text-decoration: none; }
 
 .hero-title-444 {
   display: inline-block;
-  font-size: 1.25em;
-  line-height: 0.9;
+  font-size: 1.5em;
   color: transparent;
   -webkit-text-stroke: 3px var(--white);
   text-stroke: 3px var(--white);
@@ -309,7 +308,7 @@ a { color: inherit; text-decoration: none; }
 /* ===== Run Club ===== */
 .runclub {
   position: relative;
-  padding: 140px 0 260px;
+  padding: 140px 0 420px;
   overflow: hidden;
 }
 
@@ -329,7 +328,7 @@ a { color: inherit; text-decoration: none; }
 .runclub-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.78) 65%, var(--dark) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.78) 78%, var(--dark) 100%);
   z-index: 1;
 }
 
