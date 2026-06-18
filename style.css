@@ -192,6 +192,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   filter: grayscale(1) contrast(1.1);
 }
 
@@ -278,6 +279,10 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.8);
   max-width: 600px;
+}
+
+.about-body + .about-body {
+  margin-top: 16px;
 }
 
 .about-emphasis {
