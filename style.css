@@ -22,6 +22,23 @@ body {
   overflow-x: hidden;
 }
 
+.page-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  max-width: 90vw;
+  transform: translate(-50%, -50%);
+  opacity: 0.22;
+  z-index: 500;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.page-bg img {
+  width: 100%;
+}
+
 h1, h2, h3 {
   font-family: var(--font-display);
   font-weight: 900;
@@ -489,25 +506,6 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  overflow: hidden;
-}
-
-.countdown-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1300px;
-  max-width: 160%;
-  transform: translate(-50%, -50%);
-  opacity: 0.3;
-  z-index: 0;
-  pointer-events: none;
-  filter: drop-shadow(0 0 40px rgba(140, 255, 130, 0.2));
-}
-
-.countdown .section-inner {
-  position: relative;
-  z-index: 1;
 }
 
 .countdown h2 { font-size: clamp(2.5rem, 6vw, 4rem); }
