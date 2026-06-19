@@ -594,6 +594,11 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 32px;
 }
 
+.footer-logo img {
+  height: 60px;
+  width: auto;
+}
+
 .footer-links {
   display: flex;
   justify-content: center;
