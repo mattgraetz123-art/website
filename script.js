@@ -71,10 +71,20 @@ setInterval(updateCountdown, 1000);
 const signupForm = document.getElementById('signupForm');
 const signupSuccess = document.getElementById('signupSuccess');
 
-signupForm.addEventListener('submit', (e) => {
+signupForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = document.getElementById('signupEmail').value.trim();
   if (!email) return;
-  signupSuccess.textContent = `Thanks — we'll notify ${email} when the kit drops.`;
-  signupForm.reset();
+
+  try {
+    await fetch('https://formsubmit.co/ajax/444.runnerau@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ email, subject: '444 Runner — New Notify Me signup' }),
+    });
+    signupSuccess.textContent = `Thanks — we'll notify ${email} when the kit drops.`;
+    signupForm.reset();
+  } catch (err) {
+    signupSuccess.textContent = 'Something went wrong — please try again.';
+  }
 });
