@@ -38,7 +38,7 @@ const observer = new IntersectionObserver(
 fadeEls.forEach((el) => observer.observe(el));
 
 // ===== Countdown timer =====
-const launchDate = new Date('2026-07-31T23:59:59').getTime();
+const launchDate = new Date('2026-08-31T23:59:59').getTime();
 
 const cdDays = document.getElementById('cd-days');
 const cdHours = document.getElementById('cd-hours');
