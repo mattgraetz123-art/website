@@ -108,7 +108,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-logo img {
-  height: 160px;
+  height: 240px;
   width: auto;
   display: block;
 }
@@ -280,7 +280,7 @@ a { color: inherit; text-decoration: none; }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 560px 1fr;
+  grid-template-columns: 800px 1fr;
   gap: 64px;
   align-items: center;
 }
@@ -595,7 +595,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .footer-logo img {
-  height: 320px;
+  height: 500px;
   width: auto;
 }
 
@@ -606,7 +606,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .footer-chrome-logo img {
-  width: min(680px, 90vw);
+  width: min(900px, 95vw);
   height: auto;
   opacity: 0.18;
   mix-blend-mode: screen;
