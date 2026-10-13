@@ -37,35 +37,6 @@ const observer = new IntersectionObserver(
 );
 fadeEls.forEach((el) => observer.observe(el));
 
-// ===== Countdown timer =====
-const launchDate = new Date('2026-11-07T23:59:59').getTime();
-
-const cdDays = document.getElementById('cd-days');
-const cdHours = document.getElementById('cd-hours');
-const cdMinutes = document.getElementById('cd-minutes');
-const cdSeconds = document.getElementById('cd-seconds');
-
-function pad(n) {
-  return String(n).padStart(2, '0');
-}
-
-function updateCountdown() {
-  const now = Date.now();
-  const distance = Math.max(launchDate - now, 0);
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  cdDays.textContent = pad(days);
-  cdHours.textContent = pad(hours);
-  cdMinutes.textContent = pad(minutes);
-  cdSeconds.textContent = pad(seconds);
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
 
 // ===== Waitlist counter =====
 const waitlistCount = document.getElementById('waitlistCount');
