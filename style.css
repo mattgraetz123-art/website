@@ -731,22 +731,23 @@ a { color: inherit; text-decoration: none; }
   .product-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 860px) {
   .nav-links {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.97);
+    backdrop-filter: blur(12px);
     flex-direction: column;
-    padding: 24px;
-    gap: 20px;
+    align-items: center;
+    padding: 32px 24px;
+    gap: 28px;
     border-bottom: 1px solid var(--border);
-    transform: translateY(-100%);
+    transform: translateY(-8px);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
   .nav-links.open {
@@ -755,9 +756,20 @@ a { color: inherit; text-decoration: none; }
     pointer-events: auto;
   }
 
+  .nav-links a {
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+  }
+
   .nav-burger { display: flex; }
 
+  .nav-logo img { width: 110px; }
+}
+
+@media (max-width: 640px) {
+  .nav-logo img { width: 90px; }
   .product-grid { grid-template-columns: 1fr 1fr; }
   .countdown-unit { min-width: 80px; padding: 20px 16px; }
   .countdown-number { font-size: 2.2rem; }
+  .club-photos { grid-template-columns: 1fr 1fr; }
 }
