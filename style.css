@@ -97,7 +97,7 @@ a { color: inherit; text-decoration: none; }
 .nav-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -105,10 +105,12 @@ a { color: inherit; text-decoration: none; }
 
 .nav-logo {
   display: block;
+  flex-shrink: 0;
+  margin-right: auto;
 }
 
 .nav-logo img {
-  height: 240px;
+  height: 100px;
   width: auto;
   display: block;
 }
