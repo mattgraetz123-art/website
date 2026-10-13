@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:ital,wght@0,800;0,900;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,6 +23,7 @@
       <a href="#about">About</a>
       <a href="#runclub">Run Club</a>
       <a href="#products">Products</a>
+      <a href="#instagram">Instagram</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
@@ -65,6 +67,7 @@
       <button type="submit" class="btn">NOTIFY ME</button>
     </form>
     <p class="signup-success" id="signupSuccess" aria-live="polite"></p>
+    <p class="waitlist-count" id="waitlistCount"></p>
   </div>
   <a href="#about" class="scroll-arrow" aria-label="Scroll down">
     <span></span>
@@ -119,6 +122,11 @@
 
     <div class="club-cta fade-in">
       <a href="mailto:444.runnerau@gmail.com" class="btn">JOIN THE CLUB</a>
+    </div>
+
+    <div class="club-map fade-in">
+      <p class="eyebrow" style="margin-bottom:24px;">Find Us</p>
+      <div id="runMap"></div>
     </div>
 
     <div class="club-photos fade-in">
@@ -197,6 +205,37 @@
   </div>
 </section>
 
+<section class="instagram" id="instagram">
+  <div class="section-inner">
+    <p class="eyebrow fade-in">Follow Along</p>
+    <h2 class="fade-in">@444_RUNNER</h2>
+    <p class="sub fade-in">Stay up to date with the club and the drop</p>
+    <div class="insta-grid fade-in" id="instaGrid">
+      <a href="https://instagram.com/444_runner" target="_blank" rel="noopener" class="insta-tile">
+        <img src="images/strip-1.jpg" alt="444 Runner on Instagram" loading="lazy">
+      </a>
+      <a href="https://instagram.com/444_runner" target="_blank" rel="noopener" class="insta-tile">
+        <img src="images/strip-2.jpg" alt="444 Runner on Instagram" loading="lazy">
+      </a>
+      <a href="https://instagram.com/444_runner" target="_blank" rel="noopener" class="insta-tile">
+        <img src="images/strip-3.jpg" alt="444 Runner on Instagram" loading="lazy">
+      </a>
+      <a href="https://instagram.com/444_runner" target="_blank" rel="noopener" class="insta-tile">
+        <img src="images/strip-4.jpg" alt="444 Runner on Instagram" loading="lazy">
+      </a>
+      <a href="https://instagram.com/444_runner" target="_blank" rel="noopener" class="insta-tile">
+        <img src="images/runner-street-duo.jpg" alt="444 Runner on Instagram" loading="lazy">
+      </a>
+      <a href="https://instagram.com/444_runner" target="_blank" rel="noopener" class="insta-tile">
+        <img src="images/runner-group.jpg" alt="444 Runner on Instagram" loading="lazy">
+      </a>
+    </div>
+    <div class="insta-cta fade-in">
+      <a href="https://instagram.com/444_runner" target="_blank" rel="noopener" class="btn">FOLLOW ON INSTAGRAM</a>
+    </div>
+  </div>
+</section>
+
 <footer class="footer" id="contact">
   <div class="footer-bg">
     <img src="images/footer-bg.jpg" alt="" loading="lazy">
@@ -218,6 +257,7 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

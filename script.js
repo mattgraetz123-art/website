@@ -67,6 +67,43 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+// ===== Waitlist counter =====
+const waitlistCount = document.getElementById('waitlistCount');
+
+async function getWaitlistCount() {
+  try {
+    const res = await fetch('https://api.countapi.xyz/get/444runner-au/waitlist');
+    const data = await res.json();
+    if (data.value > 0) {
+      waitlistCount.textContent = `${data.value.toLocaleString()} people already signed up`;
+    }
+  } catch (e) {}
+}
+getWaitlistCount();
+
+// ===== Run Club Map =====
+const map = L.map('runMap', { zoomControl: true, scrollWheelZoom: false }).setView([-34.9350, 138.5760], 12);
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+  maxZoom: 19
+}).addTo(map);
+
+const markerIcon = L.divIcon({
+  className: 'map-marker',
+  html: '<div class="map-pin"></div>',
+  iconSize: [16, 16],
+  iconAnchor: [8, 8]
+});
+
+L.marker([-34.9439, 138.5973], { icon: markerIcon })
+  .addTo(map)
+  .bindPopup('<strong>THURSDAY 5:00AM</strong><br>Pepo Eatery<br>175 King William Road, Hyde Park');
+
+L.marker([-34.9274, 138.5335], { icon: markerIcon })
+  .addTo(map)
+  .bindPopup('<strong>SUNDAY 7:30AM</strong><br>Pom Pom<br>58 Maple Avenue, Forestville');
+
 // ===== Signup form =====
 const signupForm = document.getElementById('signupForm');
 const signupSuccess = document.getElementById('signupSuccess');
@@ -84,6 +121,11 @@ signupForm.addEventListener('submit', async (e) => {
     });
     signupSuccess.textContent = `Thanks — we'll notify ${email} when the kit drops.`;
     signupForm.reset();
+    try {
+      const res = await fetch('https://api.countapi.xyz/hit/444runner-au/waitlist');
+      const data = await res.json();
+      if (data.value > 0) waitlistCount.textContent = `${data.value.toLocaleString()} people already signed up`;
+    } catch (e) {}
   } catch (err) {
     signupSuccess.textContent = 'Something went wrong — please try again.';
   }
