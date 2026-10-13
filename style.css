@@ -209,7 +209,7 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
-  filter: grayscale(1) contrast(1.1);
+  filter: none;
 }
 
 .hero-overlay {
