@@ -53,27 +53,44 @@ async function getWaitlistCount() {
 getWaitlistCount();
 
 // ===== Run Club Map =====
-const map = L.map('runMap', { zoomControl: true, scrollWheelZoom: false }).setView([-34.9350, 138.5760], 12);
+let runMap = null;
 
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-  maxZoom: 19
-}).addTo(map);
+function initMap() {
+  if (runMap) return;
+  const mapEl = document.getElementById('runMap');
+  if (!mapEl) return;
 
-const markerIcon = L.divIcon({
-  className: 'map-marker',
-  html: '<div class="map-pin"></div>',
-  iconSize: [16, 16],
-  iconAnchor: [8, 8]
-});
+  runMap = L.map('runMap', { zoomControl: true, scrollWheelZoom: false }).setView([-34.9350, 138.5760], 12);
 
-L.marker([-34.9439, 138.5973], { icon: markerIcon })
-  .addTo(map)
-  .bindPopup('<strong>THURSDAY 5:00AM</strong><br>Pepo Eatery<br>175 King William Road, Hyde Park');
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    maxZoom: 19
+  }).addTo(runMap);
 
-L.marker([-34.9274, 138.5335], { icon: markerIcon })
-  .addTo(map)
-  .bindPopup('<strong>SUNDAY 7:30AM</strong><br>Pom Pom<br>58 Maple Avenue, Forestville');
+  const markerIcon = L.divIcon({
+    className: 'map-marker',
+    html: '<div class="map-pin"></div>',
+    iconSize: [16, 16],
+    iconAnchor: [8, 8]
+  });
+
+  L.marker([-34.9439, 138.5973], { icon: markerIcon })
+    .addTo(runMap)
+    .bindPopup('<strong>THURSDAY 5:00AM</strong><br>Pepo Eatery<br>175 King William Road, Hyde Park');
+
+  L.marker([-34.9274, 138.5335], { icon: markerIcon })
+    .addTo(runMap)
+    .bindPopup('<strong>SUNDAY 7:30AM</strong><br>Pom Pom<br>58 Maple Avenue, Forestville');
+
+  setTimeout(() => runMap.invalidateSize(), 200);
+}
+
+const mapObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) { initMap(); mapObserver.disconnect(); } });
+}, { threshold: 0.1 });
+
+const mapEl = document.getElementById('runMap');
+if (mapEl) mapObserver.observe(mapEl);
 
 // ===== Signup form =====
 const signupForm = document.getElementById('signupForm');
