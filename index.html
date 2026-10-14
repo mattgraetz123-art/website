@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:ital,wght@0,800;0,900;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -105,7 +104,22 @@
 
     <div class="club-map fade-in">
       <p class="eyebrow" style="margin-bottom:24px;">Find Us</p>
-      <div id="runMap"></div>
+      <div class="map-pair">
+        <div class="map-item">
+          <p class="map-label">THU 5:00AM — Pepo Eatery, 175 King William Rd</p>
+          <iframe
+            src="https://maps.google.com/maps?q=175+King+William+Road+Hyde+Park+SA+5061&z=15&output=embed"
+            width="100%" height="320" style="border:0;" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Thursday run club location"></iframe>
+        </div>
+        <div class="map-item">
+          <p class="map-label">SUN 7:30AM — Pom Pom, 58 Maple Ave, Forestville</p>
+          <iframe
+            src="https://maps.google.com/maps?q=58+Maple+Avenue+Forestville+SA+5035&z=15&output=embed"
+            width="100%" height="320" style="border:0;" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Sunday run club location"></iframe>
+        </div>
+      </div>
     </div>
 
     <div class="club-photos fade-in">
@@ -236,7 +250,6 @@
   </div>
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

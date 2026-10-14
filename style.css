@@ -636,34 +636,27 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 
-#runMap {
-  width: 100%;
-  height: 420px;
+.map-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.map-item iframe {
+  display: block;
   border-radius: 2px;
   border: 1px solid rgba(255,255,255,0.1);
+  filter: grayscale(0.3) contrast(1.05);
 }
 
-.map-pin {
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  border-radius: 50%;
-  border: 2px solid #000;
-  box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+.map-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 10px;
+  text-align: left;
 }
-
-.leaflet-popup-content-wrapper {
-  background: #111;
-  color: #fff;
-  border-radius: 2px;
-  border: 1px solid rgba(255,255,255,0.15);
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-}
-
-.leaflet-popup-tip { background: #111; }
-.leaflet-popup-close-button { color: #fff !important; }
 
 /* ===== Instagram ===== */
 .instagram {
@@ -861,5 +854,5 @@ a { color: inherit; text-decoration: none; }
   .countdown-number { font-size: 2.2rem; }
   .club-photos { grid-template-columns: 1fr 1fr; }
   .insta-grid { grid-template-columns: repeat(3, 1fr); }
-  #runMap { height: 300px; }
+  .map-pair { grid-template-columns: 1fr; }
 }
