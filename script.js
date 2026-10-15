@@ -1,3 +1,17 @@
+// ===== Dark / Light mode =====
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+
+const savedTheme = (() => { try { return localStorage.getItem('theme'); } catch(e) { return null; } })();
+if (savedTheme) root.setAttribute('data-theme', savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const current = root.getAttribute('data-theme');
+  const next = current === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', next);
+  try { localStorage.setItem('theme', next); } catch(e) {}
+});
+
 // ===== Nav scroll state =====
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {

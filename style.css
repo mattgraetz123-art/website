@@ -8,7 +8,109 @@
   --border: rgba(255, 255, 255, 0.2);
   --font-display: "Big Shoulders Display", cursive;
   --font-body: "Space Grotesk", sans-serif;
+  --ticker-bg: #111111;
+  --ticker-text: #ffffff;
 }
+
+[data-theme="light"] {
+  --black: #f0eeeb;
+  --near-black: #e8e5e1;
+  --dark: #dedad5;
+  --white: #0a0a0a;
+  --border: rgba(0, 0, 0, 0.18);
+  --ticker-bg: #0a0a0a;
+  --ticker-text: #f0eeeb;
+}
+
+[data-theme="light"] body {
+  background: var(--black);
+  color: var(--white);
+}
+
+[data-theme="light"] .nav {
+  background: rgba(240, 238, 235, 0.85);
+}
+
+[data-theme="light"] .nav.scrolled {
+  background: rgba(240, 238, 235, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+
+[data-theme="light"] .nav-links a,
+[data-theme="light"] .nav-logo-444,
+[data-theme="light"] .nav-logo-runner { color: #0a0a0a; }
+
+[data-theme="light"] .nav-links a::after { background: #0a0a0a; }
+
+[data-theme="light"] .nav-burger span { background: #0a0a0a; }
+
+[data-theme="light"] .about {
+  background: var(--near-black);
+}
+
+[data-theme="light"] .about-body { color: rgba(0,0,0,0.75); }
+
+[data-theme="light"] .eyebrow { color: rgba(0,0,0,0.5); }
+
+[data-theme="light"] .products { background: var(--dark); }
+
+[data-theme="light"] .instagram { background: var(--black); }
+
+[data-theme="light"] .club-card {
+  background: rgba(230,228,224,0.95);
+  border-color: rgba(0,0,0,0.15);
+}
+
+[data-theme="light"] .club-day,
+[data-theme="light"] .club-meeting,
+[data-theme="light"] .club-details { color: rgba(0,0,0,0.6); }
+
+[data-theme="light"] .club-tagline { color: rgba(0,0,0,0.8); border-color: rgba(0,0,0,0.15); }
+
+[data-theme="light"] .runclub .sub { color: rgba(0,0,0,0.7); }
+
+[data-theme="light"] .btn {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+[data-theme="light"] .btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+[data-theme="light"] .signup-form input {
+  color: #0a0a0a;
+  border-color: rgba(0,0,0,0.3);
+}
+
+[data-theme="light"] .signup-form input::placeholder { color: rgba(0,0,0,0.4); }
+
+[data-theme="light"] .signup-success,
+[data-theme="light"] .waitlist-count { color: rgba(0,0,0,0.7); }
+
+[data-theme="light"] .product-card { background-color: #e0ddd8; border-color: rgba(0,0,0,0.15); }
+
+[data-theme="light"] .product-overlay { background: rgba(230,228,224,0.7); }
+
+[data-theme="light"] .product-label { color: #0a0a0a; }
+
+[data-theme="light"] .product-status { color: rgba(0,0,0,0.5); }
+
+[data-theme="light"] .footer-tagline { color: rgba(255,255,255,0.8); }
+
+[data-theme="light"] .footer-copy { color: rgba(255,255,255,0.5); }
+
+[data-theme="light"] .scroll-arrow span { border-color: #0a0a0a; }
+
+[data-theme="light"] .map-item iframe { border-color: rgba(0,0,0,0.15); }
+
+[data-theme="light"] .map-label { color: rgba(0,0,0,0.6); }
+
+[data-theme="light"] .theme-toggle { color: #0a0a0a; border-color: rgba(0,0,0,0.25); }
+
+[data-theme="light"] .theme-icon-dark { display: none; }
+[data-theme="light"] .theme-icon-light { display: inline; }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -186,6 +288,27 @@ a { color: inherit; text-decoration: none; }
 .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav-burger.open span:nth-child(2) { opacity: 0; }
 .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===== Theme toggle ===== */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--white);
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 2px;
+  transition: background 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+.theme-icon-light { display: none; }
 
 /* ===== Hero ===== */
 .hero {
@@ -789,6 +912,158 @@ a { color: inherit; text-decoration: none; }
   color: rgba(255, 255, 255, 0.4);
 }
 
+/* ===== Ticker ===== */
+.ticker {
+  background: var(--ticker-bg);
+  color: var(--ticker-text);
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  white-space: nowrap;
+  animation: ticker-scroll 28s linear infinite;
+  width: max-content;
+}
+
+.ticker-track span {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ticker-sep {
+  color: rgba(255,255,255,0.4);
+  font-style: normal !important;
+  font-size: 1rem !important;
+}
+
+[data-theme="light"] .ticker-sep { color: rgba(240,238,235,0.4); }
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===== Strava button ===== */
+.btn-strava {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fc4c02;
+  border-color: #fc4c02;
+  color: #ffffff !important;
+  margin-left: 16px;
+}
+
+.btn-strava:hover {
+  background: #e84300;
+  border-color: #e84300;
+  color: #ffffff !important;
+}
+
+.strava-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ===== Route cards ===== */
+.route-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 56px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.route-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  padding: 32px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.route-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #fc4c02;
+}
+
+.route-day {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 10px;
+}
+
+.route-name {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.route-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.route-stats span {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.7);
+}
+
+.route-stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--white);
+  line-height: 1;
+}
+
+.route-link {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fc4c02;
+  border-bottom: 1px solid rgba(252,76,2,0.4);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.route-link:hover { border-color: #fc4c02; }
+
+[data-theme="light"] .route-card { background: rgba(0,0,0,0.04); }
+[data-theme="light"] .route-day { color: rgba(0,0,0,0.5); }
+[data-theme="light"] .route-stats span { color: rgba(0,0,0,0.6); }
+
 /* ===== Fade-in animation ===== */
 .fade-in {
   opacity: 0;
@@ -847,6 +1122,12 @@ a { color: inherit; text-decoration: none; }
   .nav-logo img { width: 110px; }
 }
 
+@media (max-width: 860px) {
+  .route-cards { grid-template-columns: 1fr; max-width: 500px; }
+  .btn-strava { margin-left: 0; margin-top: 12px; }
+  .club-cta { display: flex; flex-direction: column; align-items: center; }
+}
+
 @media (max-width: 640px) {
   .nav-logo img { width: 90px; }
   .product-grid { grid-template-columns: 1fr 1fr; }
@@ -855,4 +1136,5 @@ a { color: inherit; text-decoration: none; }
   .club-photos { grid-template-columns: 1fr 1fr; }
   .insta-grid { grid-template-columns: repeat(3, 1fr); }
   .map-pair { grid-template-columns: 1fr; }
+  .theme-toggle { display: none; }
 }
